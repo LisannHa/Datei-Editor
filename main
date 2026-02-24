@@ -1,0 +1,25 @@
+//
+//  main.cpp
+//  CHAR-Datei-Editor
+//
+//  Created by Lisann Hartleb on 04.11.25.
+//
+
+#include "FileEditor.h"
+#include "UserInterface.h"
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, const char * argv[]) {
+    string initialPath;
+    
+    // Wenn eine Datei beim Start übergeben wird: sofort öffnen
+    if (argc > 1) initialPath = argv[1];
+    
+    FileEditor fe;
+    UserInterface ui(fe);
+    ui.run(initialPath);
+    
+    return 0;
+}
